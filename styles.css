@@ -1,0 +1,453 @@
+/* ==================== ROOT VARIABLES ==================== */
+:root {
+  --primary-color: #0066ff;
+  --primary-dark: #0052cc;
+  --primary-light: #f5f5f7;
+  --secondary-color: #00d4ff;
+  --secondary-hover: #00b8d4;
+  --accent-color: #ff9500;
+  --text-dark: #1d1d1f;
+  --text-light: #f5f5f7;
+  --text-gray: #86868b;
+  --bg-light: #f5f5f7;
+  --bg-white: #ffffff;
+  --bg-card: #ffffff;
+  --border-color: #e5e5e7;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==================== GLOBAL STYLES ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+  min-height: 100vh;
+}
+
+/* ==================== HEADER STYLES ==================== */
+header {
+  background: var(--bg-white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  color: var(--text-dark);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  margin-right: 1.5rem;
+  border-radius: 50%;
+  object-fit: contain;
+  transition: var(--transition);
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  padding: 8px;
+  box-shadow: var(--shadow);
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+.header-content {
+  flex: 1;
+}
+
+.header-content h1 {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.header-content p {
+  font-size: 0.9rem;
+  opacity: 0.6;
+  color: var(--text-dark);
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+  background: var(--bg-light);
+  padding: 0.75rem 1rem;
+  border-radius: 50px;
+  transition: var(--transition);
+  border: 1px solid var(--border-color);
+}
+
+.search-bar:focus-within {
+  background: var(--bg-white);
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow);
+}
+
+.search-bar input {
+  background: transparent;
+  border: none;
+  color: var(--text-dark);
+  outline: none;
+  min-width: 150px;
+  font-size: 0.9rem;
+}
+
+.search-bar input::placeholder {
+  color: var(--text-gray);
+}
+
+.search-bar button {
+  background: transparent;
+  border: none;
+  color: var(--text-dark);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.search-bar button:hover {
+  transform: scale(1.1);
+  color: var(--primary-color);
+}
+
+/* ==================== NAVIGATION STYLES ==================== */
+nav {
+  background: var(--bg-white);
+  padding: 0;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 6rem;
+  z-index: 50;
+  border-bottom: 1px solid var(--border-color);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  list-style: none;
+  flex: 1;
+  max-width: 200px;
+  text-align: center;
+}
+
+nav ul li a {
+  display: block;
+  text-decoration: none;
+  color: var(--text-dark);
+  padding: 1rem;
+  font-weight: 500;
+  border-bottom: 3px solid transparent;
+  transition: var(--transition);
+}
+
+nav ul li a:hover {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+  background-color: transparent;
+}
+
+/* ==================== MAIN CONTENT STYLES ==================== */
+main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 300px);
+}
+
+main h2 {
+  font-size: 2.5rem;
+  margin: 2rem 0 1rem 0;
+  color: var(--text-dark);
+  border-bottom: none;
+  padding-bottom: 0.5rem;
+  display: block;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+main h3 {
+  font-size: 1.25rem;
+  margin: 1.5rem 0 0.75rem 0;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+main p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  color: #555555;
+  font-size: 1.05rem;
+}
+
+main ul {
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+main ul li {
+  margin-bottom: 0.5rem;
+  line-height: 1.8;
+  color: #555555;
+  font-size: 1.05rem;
+}
+
+/* ==================== HEADINGS ==================== */
+h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* ==================== FOOTER STYLES ==================== */
+footer {
+  background: var(--bg-white);
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--text-dark);
+  margin-top: 3rem;
+  border-top: 1px solid var(--border-color);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* ==================== FORM STYLES ==================== */
+.story-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+}
+
+.story-form label {
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.story-form input,
+.story-form textarea {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: var(--transition);
+  background: var(--bg-white);
+  color: var(--text-dark);
+}
+
+.story-form input::placeholder,
+.story-form textarea::placeholder {
+  color: var(--text-gray);
+}
+
+.story-form input:focus,
+.story-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background: var(--bg-white);
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+}
+
+.story-form textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.story-form button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: var(--transition);
+  align-self: flex-start;
+  box-shadow: var(--shadow);
+}
+
+.story-form button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.story-form button:active {
+  transform: translateY(0);
+}
+
+/* ==================== TRANSLATION WIDGET ==================== */
+#google_translate_element {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.goog-te-gadget-simple {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px !important;
+  padding: 8px 12px !important;
+  transition: var(--transition);
+}
+
+.goog-te-gadget-simple:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow);
+}
+
+.goog-te-gadget-simple.goog-te-menu-value {
+  color: var(--text-dark) !important;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.goog-te-gadget-simple.goog-te-menu-value {
+  color: var(--text-dark);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .header-content {
+    flex: 1 1 auto;
+  }
+
+  .header-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .header-content p {
+    display: none;
+  }
+
+  .search-bar {
+    width: 100%;
+    order: 3;
+  }
+
+  .search-bar input {
+    min-width: 100px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+  }
+
+  nav ul li {
+    flex: 0 1 calc(50% - 0.5rem);
+    max-width: none;
+  }
+
+  main {
+    padding: 1.5rem;
+  }
+
+  main h2 {
+    font-size: 1.75rem;
+  }
+
+  .story-form {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 0.75rem;
+  }
+
+  .logo {
+    width: 60px;
+    margin-right: 0.75rem;
+  }
+
+  .header-content h1 {
+    font-size: 1.25rem;
+  }
+
+  nav ul li {
+    flex: 0 1 100%;
+  }
+
+  nav ul li a {
+    padding: 0.75rem;
+  }
+
+  main {
+    padding: 1rem;
+    min-height: calc(100vh - 250px);
+  }
+
+  main h2 {
+    font-size: 1.5rem;
+  }
+
+  main h3 {
+    font-size: 1.1rem;
+  }
+
+  main p,
+  main ul li {
+    font-size: 0.95rem;
+  }
+
+  .story-form {
+    max-width: 100%;
+  }
+}
